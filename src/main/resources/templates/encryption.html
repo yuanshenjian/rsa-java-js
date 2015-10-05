@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Encrypt</title>
+    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}"/>
+    <script type="text/javascript" th:src="@{/js/jquery.min.js}"></script>
+    <script type="text/javascript" th:src="@{/js/jsencrypt.js}"></script>
+    <script type="text/javascript" th:src="@{/js/encryption.js}"></script>
+</head>
+<head>
+</head>
+<body>
+<div class="container">
+    <div class="navbar">
+        <div class="navbar-inner">
+            <a class="brand" href="http://www.thymeleaf.org"> Thymeleaf -
+                Plain </a>
+        </div>
+    </div>
+    <h1>Encrypt</h1>
+    <input id="message"/>
+    <div>
+        <button id="getPublicKey">get public key</button>
+    </div>
+
+    <p id="publicKey"/>
+    <div>
+        <button id="encryption">encrypt</button>
+    </div>
+    <p id="encryptionResult"/>
+    <div>
+        <button id="decryption">decrypt</button>
+    </div>
+    <p id="decryptionResult"/>
+</div>
+</body>
+</html>
+
+
