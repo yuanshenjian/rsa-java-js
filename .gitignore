@@ -1,0 +1,20 @@
+# Created by .ignore support plugin (hsz.mobi)
+*.patch
+/HEAD
+/out
+/config
+/refs
+/objects
+/description
+/hooks
+/info
+.idea/
+target/
+build/
+.gradle
+mb.pid
+logs/
+*.log
+*.DS_Store
+conf/properties/*
+springboot-mybatis.iws
