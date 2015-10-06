@@ -23,8 +23,6 @@ import java.util.Map;
 @RestController
 public class EncryptionController {
 
-    public static PrivateKey glogalPprivateKey;
-
     private static final Logger LOGGER = LoggerFactory.getLogger(EncryptionController.class);
 
     @RequestMapping(value = "/encryption-parameters",
@@ -34,7 +32,6 @@ public class EncryptionController {
         PrivateKey privateKey = keyPair.getPrivate();
         RSAPublicKey publicKey = (RSAPublicKey) keyPair.getPublic();
         request.getSession().setAttribute("_private_key", privateKey);
-        glogalPprivateKey = privateKey;
         String publicKeyString = RSAUtils.getBase64PublicKey(publicKey);
         LOGGER.info("modulus = {}, exponent = {}", publicKey.getModulus(), publicKey.getPublicExponent());
         LOGGER.info("Public key = {}", publicKeyString);
