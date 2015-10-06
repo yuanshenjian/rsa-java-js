@@ -15,8 +15,6 @@ public class CORSFilter extends OncePerRequestFilter {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(CORSFilter.class);
 
-    private static final String CLIENT_ORIGIN = "localhost:8088";
-
     @Value("${cors.origin}")
     private String corsOrigin;
 
