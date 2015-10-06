@@ -35,7 +35,7 @@ public class EncryptionController {
         RSAPublicKey publicKey = (RSAPublicKey) keyPair.getPublic();
         request.getSession().setAttribute("_private_key", privateKey);
         glogalPprivateKey = privateKey;
-        String publicKeyString = RSAUtils.getPublicKeyStr(publicKey);
+        String publicKeyString = RSAUtils.getBase64PublicKey(publicKey);
         LOGGER.info("modulus = {}, exponent = {}", publicKey.getModulus(), publicKey.getPublicExponent());
         LOGGER.info("Public key = {}", publicKeyString);
         Map<String, Object> publicKeyMap = new HashMap<>();
