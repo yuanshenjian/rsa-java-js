@@ -39,7 +39,6 @@ $(document).ready(function () {
             url: encryptUrl,
             contentType: "application/json",
             data: JSON.stringify({"encryptedData": encrypted}),
-            dataType: "json",
             xhrFields: {
                 withCredentials: true
             },
