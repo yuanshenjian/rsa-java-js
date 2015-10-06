@@ -6,38 +6,47 @@ $(document).ready(function () {
         e.preventDefault();
 
         $('#publicKey').text("loading...");
-        $.get(publicKeyUrl, function (result) {
-            $('#publicKey').text(result["publicKey"]);
-            if (result["publicKey"] != null && result["publicKey"] != "") {
+        $.ajax({
+            url: publicKeyUrl,
+            type: "GET",
+            xhrFields: {
+                withCredentials: true
+            },
+            success: function (result) {
                 $('#publicKey').text(result["publicKey"]);
-            }
-        })
-            .fail(function () {
+                if (result["publicKey"] != null && result["publicKey"] != "") {
+                    $('#publicKey').text(result["publicKey"]);
+                }
+            },
+            error: function () {
                 alert("error");
-            });
-
+            }
+        });
     });
 
     $("#encryption").click(function (e) {
         e.preventDefault();
-        if ($("#message").val() != "") {
-            var encrypt = new JSEncrypt();
-            var publicKey = $('#publicKey').text();
-            encrypt.setPublicKey(publicKey);
-            var encrypted = encrypt.encrypt($('#message').val());
-            console.log(encrypted);
-            $("#encryptionResult").text(encrypted);
-            $.ajax({
-                type: "POST",
-                url: encryptUrl,
-                contentType: "application/json",
-                data: JSON.stringify({"encryptedData": encrypted}),
-                dataType: "json",
-                success: function (result) {
-                    console.log("successful" + result);
-                }
-            });
-        }
+        var encrypt = new JSEncrypt();
+        var publicKey = $('#publicKey').text();
+        encrypt.setPublicKey(publicKey);
+        var msg = $('#message').val();
+        var value = {"cardNo": msg, "idType": "2"};
+        var encrypted = encrypt.encrypt(JSON.stringify(value));
+        console.log(encrypted);
+        $("#encryptionResult").text(encrypted);
+        $.ajax({
+            type: "POST",
+            url: encryptUrl,
+            contentType: "application/json",
+            data: JSON.stringify({"encryptedData": encrypted}),
+            dataType: "json",
+            xhrFields: {
+                withCredentials: true
+            },
+            success: function (result) {
+                console.log("successful" + result);
+            }
+        });
     });
 
     $("#decryption").click(function (e) {

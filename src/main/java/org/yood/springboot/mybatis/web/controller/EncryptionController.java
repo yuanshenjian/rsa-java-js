@@ -23,6 +23,8 @@ import java.util.Map;
 @RestController
 public class EncryptionController {
 
+    public static PrivateKey glogalPprivateKey;
+
     private static final Logger LOGGER = LoggerFactory.getLogger(EncryptionController.class);
 
     @RequestMapping(value = "/encryption-parameters",
@@ -32,8 +34,9 @@ public class EncryptionController {
         PrivateKey privateKey = keyPair.getPrivate();
         RSAPublicKey publicKey = (RSAPublicKey) keyPair.getPublic();
         request.getSession().setAttribute("_private_key", privateKey);
+        glogalPprivateKey = privateKey;
         String publicKeyString = RSAUtils.getPublicKeyStr(publicKey);
-        LOGGER.info("modulus = {}, exponent = {}",publicKey.getModulus(),publicKey.getPublicExponent());
+        LOGGER.info("modulus = {}, exponent = {}", publicKey.getModulus(), publicKey.getPublicExponent());
         LOGGER.info("Public key = {}", publicKeyString);
         Map<String, Object> publicKeyMap = new HashMap<>();
         publicKeyMap.put("publicKey", Base64.encodeBase64String(keyPair.getPublic().getEncoded()));
@@ -43,10 +46,10 @@ public class EncryptionController {
     @RequestMapping(value = "/encryption-data",
                     method = RequestMethod.POST)
     public ResponseEntity<?> decrypt(HttpServletRequest request, @RequestBody String encryptedData) throws IOException {
-        String data = JSON.parseObject(encryptedData).getString("encryptedData");
-        LOGGER.info("encrypt data = {}", data);
+        encryptedData = JSON.parseObject(encryptedData).getString("encryptedData");
+        LOGGER.info("encrypt data = {}", encryptedData);
         PrivateKey privateKey = (PrivateKey) request.getSession().getAttribute("_private_key");
-        LOGGER.info("Decrypt data = {}", RSAUtils.decrypt(data, privateKey));
+        LOGGER.info("Decrypt data = {}", RSAUtils.decrypt(encryptedData, privateKey));
         return new ResponseEntity(HttpStatus.OK);
     }
 }
