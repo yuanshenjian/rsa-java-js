@@ -1,7 +1,6 @@
 package org.yood.rsa.util;
 
 import org.apache.commons.codec.binary.Base64;
-
 import javax.crypto.Cipher;
 import java.math.BigInteger;
 import java.security.*;
@@ -53,8 +52,8 @@ public class RSAUtils {
             RSAPublicKeySpec keySpec = new RSAPublicKeySpec(modulus, exponent);
             return keyFactory.generatePublic(keySpec);
         } catch (Exception e) {
-            e.printStackTrace();
-            return null;
+            throw new IllegalArgumentException("Failed to get public key!", e);
+
         }
     }
 
@@ -79,8 +78,7 @@ public class RSAUtils {
             RSAPrivateKeySpec keySpec = new RSAPrivateKeySpec(modulus, exponent);
             return keyFactory.generatePrivate(keySpec);
         } catch (Exception e) {
-            e.printStackTrace();
-            return null;
+            throw new IllegalArgumentException("Failed to get private key!", e);
         }
     }
 

@@ -1,11 +1,11 @@
-##Introduction
+##Description  
 A demo project of **spring-boot**, which involves **rsa** *javascript encryption* and *java decryption*.
 
 
 ###Basic environment
 ####Back-end
 * Java 8 
-* Gradle 2.5 or abover
+* Gradle 2.5 or above
 
 
 ####Front-end
@@ -186,6 +186,15 @@ public class EncryptionController {
 
 ####RSAUtils.java
 ~~~java
+import org.apache.commons.codec.binary.Base64;
+import javax.crypto.Cipher;
+import java.math.BigInteger;
+import java.security.*;
+import java.security.spec.PKCS8EncodedKeySpec;
+import java.security.spec.RSAPrivateKeySpec;
+import java.security.spec.RSAPublicKeySpec;
+import java.security.spec.X509EncodedKeySpec;
+
 public class RSAUtils {
 
     public static final String RSA_ECB_PKCS1_PADDING = "RSA/ECB/PKCS1Padding";
@@ -229,8 +238,8 @@ public class RSAUtils {
             RSAPublicKeySpec keySpec = new RSAPublicKeySpec(modulus, exponent);
             return keyFactory.generatePublic(keySpec);
         } catch (Exception e) {
-            e.printStackTrace();
-            return null;
+            throw new IllegalArgumentException("Failed to get public key!", e);
+            
         }
     }
 
@@ -255,8 +264,7 @@ public class RSAUtils {
             RSAPrivateKeySpec keySpec = new RSAPrivateKeySpec(modulus, exponent);
             return keyFactory.generatePrivate(keySpec);
         } catch (Exception e) {
-            e.printStackTrace();
-            return null;
+            throw new IllegalArgumentException("Failed to get private key!", e);
         }
     }
 
