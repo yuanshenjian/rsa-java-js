@@ -18,24 +18,25 @@ A demo project of **spring-boot**, which involves **rsa** *javascript encryption
 * spring-boot
 
 
-##Reference
-* Spring-boot : <http://projects.spring.io/spring-boot>
-* JSEncrypt : <http://travistidwell.com/jsencrypt>
-* JSEncrypt-Github : <https://github.com/travist/jsencrypt>
- 
-
 ##Run application
 ###Test
 * $ gradle clean test
 
 ###Start server 
-####Same domain
+#####Same domain
 * $ gradle clean bootRun
 
-####Cors domain
+#####Cors domain
 * $ gradle clean build
 * $ java -jar -Dserver.port=8099 build/libs/rsa-java-js-1.0-SNAPSHOT.jar
 * $ java -jar -Dserver.port=8088 build/libs/rsa-java-js-1.0-SNAPSHOT.jar
+
+
+##Reference
+* Spring-boot : <http://projects.spring.io/spring-boot>
+* JSEncrypt : <http://travistidwell.com/jsencrypt>
+* JSEncrypt-Github : <https://github.com/travist/jsencrypt>
+ 
 
 ##Contact me
 * **Emali :** <sjyuan@thoughtworks.com>
