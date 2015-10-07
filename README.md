@@ -14,8 +14,7 @@ A demo project of **spring-boot**, which involves **rsa** *javascript encryption
 
 ####Core code
 #####JS encryption
-
-~~~html
+~~~javascritp
 	var publicKeyUrl = "http://localhost:8099/rjj/encryption-parameters";
     var encryptUrl = "http://localhost:8099/rjj/encryption-data";
     $("#getPublicKey").click(function (e) {
