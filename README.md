@@ -10,9 +10,25 @@ A demo project of **spring-boot**, which involves **rsa** *javascript encryption
 * jsencrypt.js
 * jQuery.js  
 
+####Skills
+* RSA
+* spring-boot
+
+###Reference
+* Spring-boot : <http://projects.spring.io/spring-boot>
+* jsencrypt: <https://github.com/travist/jsencrypt>
+ 
+  
+###Contact me
+* **Emali :** <sjyuan@thoughtworks.com>
+* **ThoughtWorks:** <https://www.thoughtworks.com>
+
+###Run application
+* $ gradle clean bootRun
+
 ***
 
-####Core code
+####Core source code
 #####Dependencies
 ~~~groovy
 dependencies {
@@ -150,6 +166,8 @@ public class EncryptionController {
     }
 }
 ~~~
+
+
 ####RSAUtils.java
 ~~~java
 public class RSAUtils {
@@ -275,17 +293,3 @@ public class RSAUtils {
     }
 }
 ~~~
-
-
-
-####Skills
-* RSA
-* spring-boot
- 
-###Reference
-* Spring-boot : <http://projects.spring.io/spring-boot>
-* jsencrypt: <https://github.com/travist/jsencrypt>
-  
-###Contact me
-* **Emali :** <sjyuan@thoughtworks.com>
-* **ThoughtWorks:** <https://www.thoughtworks.com>
