@@ -1,10 +1,8 @@
 $(document).ready(function () {
     var publicKeyUrl = "http://localhost:8099/rjj/encryption-parameters";
     var encryptUrl = "http://localhost:8099/rjj/encryption-data";
-
     $("#getPublicKey").click(function (e) {
         e.preventDefault();
-
         $('#publicKey').text("loading...");
         $.ajax({
             url: publicKeyUrl,

@@ -16,7 +16,6 @@ import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
 import java.security.KeyPair;
 import java.security.PrivateKey;
-import java.security.interfaces.RSAPublicKey;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -30,11 +29,8 @@ public class EncryptionController {
     public ResponseEntity<?> getEncryptionPublicKey(HttpServletRequest request) {
         KeyPair keyPair = RSAUtils.generateKeyPair();
         PrivateKey privateKey = keyPair.getPrivate();
-        RSAPublicKey publicKey = (RSAPublicKey) keyPair.getPublic();
         request.getSession().setAttribute("_private_key", privateKey);
-        String publicKeyString = RSAUtils.getBase64PublicKey(publicKey);
-        LOGGER.info("modulus = {}, exponent = {}", publicKey.getModulus(), publicKey.getPublicExponent());
-        LOGGER.info("Public key = {}", publicKeyString);
+
         Map<String, Object> publicKeyMap = new HashMap<>();
         publicKeyMap.put("publicKey", Base64.encodeBase64String(keyPair.getPublic().getEncoded()));
         return ResponseEntity.ok(publicKeyMap);
@@ -44,7 +40,6 @@ public class EncryptionController {
                     method = RequestMethod.POST)
     public ResponseEntity<?> decrypt(HttpServletRequest request, @RequestBody String encryptedData) throws IOException {
         encryptedData = JSON.parseObject(encryptedData).getString("encryptedData");
-        LOGGER.info("encrypt data = {}", encryptedData);
         PrivateKey privateKey = (PrivateKey) request.getSession().getAttribute("_private_key");
         LOGGER.info("Decrypt data = {}", RSAUtils.decrypt(encryptedData, privateKey));
         return new ResponseEntity(HttpStatus.OK);
