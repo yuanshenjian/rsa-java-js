@@ -4,10 +4,10 @@ A demo project of spring-boot, which involves rsa javascript encryption and java
 
 
 1. Basic environment
-..* Java 8
-..* Gradle2.4
-..* JSEncryption.js
-..* jQuery.js
+⋅⋅* Java 8
+⋅⋅* Gradle2.4
+⋅⋅* JSEncryption.js
+⋅⋅* jQuery.js
 
 
 
