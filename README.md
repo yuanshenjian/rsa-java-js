@@ -1,11 +1,11 @@
-##Description  
+##Introduction
 A demo project of **spring-boot**, which involves **rsa** *javascript encryption* and *java decryption*.
 
 
 ###Basic environment
 ####Back-end
 * Java 8 
-* Gradle 2.5 or above
+* Gradle 2.5 or abover
 
 
 ####Front-end
