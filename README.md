@@ -46,7 +46,7 @@ A demo project of **spring-boot**, which involves **rsa** *javascript encryption
 
 ####Core source code
 #####Dependencies
-~~~groovy
+~~~java
 dependencies {
     compile 'org.springframework.boot:spring-boot-starter-web'
     compile 'org.springframework.boot:spring-boot-starter-thymeleaf'
