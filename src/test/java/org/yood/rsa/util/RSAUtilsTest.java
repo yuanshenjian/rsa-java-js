@@ -87,7 +87,7 @@ public class RSAUtilsTest {
 
     @Test
     public void testEncryptAsByteArray() throws Exception {
-        String encryptData = "中华人民共和国";
+        String encryptData = "Chinese people";
         LOGGER.info("Encrypt data = {}", encryptData);
         byte[] encryptedData = RSAUtils.encryptAsByteArray(encryptData, publicKey);
         String decryptData = RSAUtils.decrypt(encryptedData, privateKey);
@@ -97,7 +97,7 @@ public class RSAUtilsTest {
 
     @Test
     public void testEncryptAsString() throws Exception {
-        String encryptData = "中华人民共和国";
+        String encryptData = "Chinese people";
         LOGGER.info("Encrypt data = {}", encryptData);
         String encryptedData = RSAUtils.encryptAsString(encryptData, publicKey);
         String decryptData = RSAUtils.decrypt(encryptedData, privateKey);
@@ -117,7 +117,7 @@ public class RSAUtilsTest {
 
     @Test
     public void testEncryptAsString1() throws Exception {
-        String encryptData = "中华人民共和国";
+        String encryptData = "Chinese people";
         LOGGER.info("Encrypt data = {}", encryptData);
         String encryptedData = RSAUtils.encryptAsString(encryptData, RSAUtils.getBase64PublicKey(publicKey));
         String decryptData = RSAUtils.decrypt(encryptedData, RSAUtils.getBase64PrivateKey(privateKey));
@@ -127,7 +127,7 @@ public class RSAUtilsTest {
 
     @Test
     public void testEncryptAsByteArray1() throws Exception {
-        String encryptData = "中华人民共和国";
+        String encryptData = "Chinese people";
         LOGGER.info("Encrypt data = {}", encryptData);
         byte[] encryptedData = RSAUtils.encryptAsByteArray(encryptData, RSAUtils.getBase64PublicKey(publicKey));
         String decryptData = RSAUtils.decrypt(encryptedData, RSAUtils.getBase64PrivateKey(privateKey));
