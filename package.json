@@ -19,11 +19,9 @@
     "url": "https://github.com/ysjian/rsa-java-js/issues"
   },
   "homepage": "https://github.com/ysjian/rsa-java-js#readme",
-  "dependencies": {
-    "jquery": "^2.1.4",
-    "jsencrypt": "git://github.com/ysjian/jsencrypt.git"
-  },
   "devDependencies": {
-    "gulp": "^3.9.0"
+    "gulp": "^3.9.0",
+    "jquery": "^2.1.4",
+    "jsencrypt": "git://github.com/travist/jsencrypt.git"
   }
 }
