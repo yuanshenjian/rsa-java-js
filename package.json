@@ -22,5 +22,8 @@
   "dependencies": {
     "jquery": "^2.1.4",
     "jsencrypt": "git://github.com/ysjian/jsencrypt.git"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.0"
   }
 }
