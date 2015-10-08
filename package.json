@@ -1,0 +1,26 @@
+{
+  "name": "rsa-java-js",
+  "version": "1.0.0",
+  "description": "A demo project of **spring-boot**, which involves **rsa** *javascript encryption* and *java decryption*.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ysjian/rsa-java-js.git"
+  },
+  "keywords": [
+    "\"rsa-java-js\""
+  ],
+  "author": "Shenjian YUAN",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ysjian/rsa-java-js/issues"
+  },
+  "homepage": "https://github.com/ysjian/rsa-java-js#readme",
+  "dependencies": {
+    "jquery": "^2.1.4",
+    "jsencrypt": "git://github.com/ysjian/jsencrypt.git"
+  }
+}
