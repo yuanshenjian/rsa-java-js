@@ -9,8 +9,8 @@ A demo project of **spring-boot**, which involves **rsa** *javascript encryption
 
 
 ###Front-end
-* jsencrypt.js
-* jQuery.js  
+* npm
+* gulp 
 
 
 ###Skills
@@ -19,7 +19,10 @@ A demo project of **spring-boot**, which involves **rsa** *javascript encryption
 
 
 ##Run application
-###Start server 
+###1. Setup front-end
+		$ npm install
+		$ gulp
+###2. Start server 
 * **Same domain**  
 
 		$ gradle clean bootRun
