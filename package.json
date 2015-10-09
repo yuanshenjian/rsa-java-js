@@ -21,6 +21,9 @@
   "homepage": "https://github.com/ysjian/rsa-java-js#readme",
   "devDependencies": {
     "gulp": "^3.9.0",
+    "gulp-concat": "^2.6.0",
+    "gulp-uglify": "^1.4.1",
+    "gulp-watch": "^4.3.5",
     "jquery": "^2.1.4",
     "jsencrypt": "git://github.com/travist/jsencrypt.git"
   }

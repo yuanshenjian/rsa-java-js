@@ -19,3 +19,4 @@ logs/
 conf/properties/*
 springboot-mybatis.iws
 /node_modules
+/bower_components

@@ -86,5 +86,6 @@
     <orderEntry type="library" scope="TEST" name="Gradle: net.minidev:json-smart:2.1.0" level="project" />
     <orderEntry type="library" scope="TEST" name="Gradle: net.minidev:asm:1.0.2" level="project" />
     <orderEntry type="library" scope="TEST" name="Gradle: asm:asm:3.3.1" level="project" />
+    <orderEntry type="library" name="rsa-java-js node_modules" level="project" />
   </component>
 </module>
