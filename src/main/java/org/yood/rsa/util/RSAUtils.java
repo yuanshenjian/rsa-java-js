@@ -1,6 +1,7 @@
 package org.yood.rsa.util;
 
 import org.apache.commons.codec.binary.Base64;
+
 import javax.crypto.Cipher;
 import java.math.BigInteger;
 import java.security.*;
@@ -85,6 +86,8 @@ public class RSAUtils {
     }
 
     public static byte[] encryptAsByteArray(String data, PublicKey publicKey) {
+        throwNullPointException(data);
+        throwNullPointException(publicKey);
         try {
             Cipher cipher = Cipher.getInstance(RSA_ECB_PKCS1_PADDING);
             cipher.init(Cipher.ENCRYPT_MODE, publicKey);
@@ -107,6 +110,8 @@ public class RSAUtils {
     }
 
     public static String decrypt(byte[] data, PrivateKey privateKey) {
+        throwNullPointException(data);
+        throwNullPointException(privateKey);
         try {
             Cipher cipher = Cipher.getInstance(RSA_ECB_PKCS1_PADDING);
             cipher.init(Cipher.DECRYPT_MODE, privateKey);
@@ -126,6 +131,12 @@ public class RSAUtils {
 
     public static String decrypt(String data, String base64PrivateKey) {
         return decrypt(Base64.decodeBase64(data), getPrivateKey(base64PrivateKey));
+    }
+
+    private static void throwNullPointException(Object obj) {
+        if (null == obj) {
+            throw new NullPointerException();
+        }
     }
 }
 
