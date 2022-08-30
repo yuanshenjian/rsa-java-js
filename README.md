@@ -1,28 +1,28 @@
-##Introduction
+## Introduction
 A demo project of **spring-boot**, which involves **rsa** *javascript encryption* and *java decryption*.
 
 
-##Basic environment
-###Back-end
+## Basic environment
+### Back-end
 * Java 8 
 * Gradle 2.5 or abover
 
 
-###Front-end
+### Front-end
 * npm
 * gulp 
 
 
-###Skills
+### Skills
 * RSA
 * spring-boot
 
 
-##Run application
-###1. Setup front-end
+## Run application
+### 1. Setup front-end
 		$ npm install
 		$ gulp
-###2. Start server 
+### 2. Start server 
 * **Same domain**  
 
 		$ gradle clean bootRun
@@ -47,8 +47,8 @@ A demo project of **spring-boot**, which involves **rsa** *javascript encryption
 ***
 
 
-##Core source code
-#####Dependencies
+## Core source code
+##### Dependencies
 ~~~java
 dependencies {
     compile 'org.springframework.boot:spring-boot-starter-web'
@@ -67,7 +67,7 @@ dependencies {
 }
 ~~~
 
-#####JS encryption
+##### JS encryption
 ~~~html
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
@@ -155,7 +155,7 @@ dependencies {
 ~~~
 
 
-#####Java decryption
+##### Java decryption
 ~~~java
 @RestController
 public class EncryptionController {
@@ -186,7 +186,7 @@ public class EncryptionController {
 ~~~
 
 
-####RSAUtils.java
+#### RSAUtils.java
 ~~~java
 import org.apache.commons.codec.binary.Base64;
 import javax.crypto.Cipher;
